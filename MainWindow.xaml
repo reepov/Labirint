@@ -1,0 +1,40 @@
+﻿<Window x:Class="Labirint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labirint"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="614.169" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Человек в лабиринте" HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="18" Margin="326,0,55,0" Height="34" Width="186"/>
+        <Button Content="Закрыть" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="124" Height="36" FontSize="18" Grid.Column="1" Click="Button_Click_1"/>
+        <Grid Background="Transparent" ShowGridLines="True" Name="InsideGRID" HorizontalAlignment="Stretch" Margin="10,13,0,13" Grid.Row="1" VerticalAlignment="Stretch" MouseDown="GridCtrl_MouseDown">
+            <Polyline Stroke="Red" StrokeThickness="5"  Name="Way" Grid.RowSpan="1000000" Grid.ColumnSpan="1000000"/>
+            <Border Grid.RowSpan="1000000" Grid.ColumnSpan="1000000" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="468" VerticalAlignment="Top" Width="547" />
+        </Grid>
+        <TextBox Name="textBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="103,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"/>
+        <TextBox Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="103,38,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"/>
+        <Button Name="Field" Content="Построить поле" Grid.Column="1" HorizontalAlignment="Left" Margin="10,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="25" Click="Field_Click" />
+        <Button Name="Start" Content="Начало пути" Grid.Column="1" HorizontalAlignment="Left" Margin="10,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184"  Height="34" Click="Start_Click"/>
+        <Button Name="Finish" Content="Конец пути" Grid.Column="1" HorizontalAlignment="Left" Margin="10,160,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="32" Click="Finish_Click"/>
+        <Button Name="Road" Content="Дорога" Grid.Column="1" HorizontalAlignment="Left" Margin="10,214,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="44" Click="Road_Click"/>
+        <Button Name="Boloto" Content="Болото" Grid.Column="1" HorizontalAlignment="Left" Margin="10,290,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="44" Click="Boloto_Click"/>
+        <Button Name="Sand" Content="Песок" Grid.Column="1" HorizontalAlignment="Left" Margin="10,366,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="44" Click="Sand_Click"/>
+        <Button Name="Wall" Content="Стена" Grid.Column="1" HorizontalAlignment="Left" Margin="10,438,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="44" Click="Wall_Click"/>
+        <Button Name="Counting" Content="Рассчитать оптимальный путь" HorizontalAlignment="Left" Margin="170,496,0,0" VerticalAlignment="Top" Width="236" Height="32" Grid.Row="1" Grid.RowSpan="2" Click="Counting_Click"/>
+        <Label Content="Ширина поля" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Высота поля" Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
